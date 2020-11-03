@@ -13,7 +13,7 @@
       "image": "/images/dress2.jpg",
       "title": "Midi sundress with shirring detail 2",
       "description": "This is for all something ... 2",
-      "availableSizes": ["X", "L", "XL", "XXL"],
+      "availableSizes": ["X", "L"],
       "price": 39.9
     },
     {
@@ -21,7 +21,7 @@
       "image": "/images/dress3.jpg",
       "title": "Midi sundress with shirring detail 3",
       "description": "This is for all something ... 3",
-      "availableSizes": ["X", "L", "XL", "XXL"],
+      "availableSizes": ["XL", "XXL"],
       "price": 49.9
     },
     {
@@ -29,7 +29,7 @@
       "image": "/images/dress3.jpg",
       "title": "Midi sundress with shirring detail 3",
       "description": "This is for all something ... 3",
-      "availableSizes": ["X", "L", "XL", "XXL"],
+      "availableSizes": ["X"],
       "price": 44.9
     },
     {
@@ -37,7 +37,7 @@
       "image": "/images/dress3.jpg",
       "title": "Midi sundress with shirring detail 3",
       "description": "This is for all something ... 3",
-      "availableSizes": ["X", "L", "XL", "XXL"],
+      "availableSizes": ["L"],
       "price": 105.2
     }
   ]
