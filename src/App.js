@@ -12,7 +12,7 @@ class App extends React.Component {
       products: ProductList.products,
       size: "",
       sort: "",
-      cartItems: []
+      cartItems: localStorage.getItem("cartItems") ? JSON.parse(localStorage.getItem("cartItems")) : []
     }
   }
 
@@ -28,14 +28,16 @@ class App extends React.Component {
     if (!alreadyInCart) {
       cartItems.push({ ...product, count: 1 });
     }
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
     this.setState({ cartItems })
   }
 
   removeFromCart = (product) => {
-    const cartItems = this.state.cartItems.slice();
+    const cartItems = this.state.cartItems.slice().filter((item => item._id !== product._id));
     this.setState({
-      cartItems: cartItems.filter((item => item._id !== product._id))
+      cartItems: cartItems
     })
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }
   
   filterProducts = (event) => {
@@ -71,6 +73,10 @@ class App extends React.Component {
     })
   }
 
+  createOrder = (order) => {
+    alert("Need to save " + order.name + "," + order.address + "," + order.email);
+  }
+
   render() {
     return (
       <div className="grid-container">
@@ -94,6 +100,7 @@ class App extends React.Component {
               <Cart 
                 cartItems={this.state.cartItems}
                 removeFromCart={this.removeFromCart}
+                createOrder={this.createOrder}
               ></Cart>
             </div>
           </div>
