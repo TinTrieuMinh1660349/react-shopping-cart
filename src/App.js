@@ -101,7 +101,8 @@ class App extends React.Component {
                 cartItems={this.state.cartItems}
                 removeFromCart={this.removeFromCart}
                 createOrder={this.createOrder}
-              ></Cart>
+                addToCart={this.addToCart}>
+              </Cart>
             </div>
           </div>
         </main>
