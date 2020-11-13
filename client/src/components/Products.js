@@ -8,19 +8,19 @@ class Products extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      product: null
+      product: null,
     }
   }
 
   openModal = (product) => {
     this.setState({
-      product
+      product,
     })
   }
 
-  closeModal = (product) => {
+  closeModal = () => {
     this.setState({
-      product: null
+      product: null,
     })
   }
 
@@ -46,31 +46,31 @@ class Products extends Component {
           </ul>
         </Fade>
         {this.state.product && (
-          <Modal isOpen={true} onRequestClose={!this.state.product}>
+          <Modal ariaHideApp={false} isOpen={true} onRequestClose={this.closeModal}>
             <Zoom>
-              <button className="close-modal" onClick={this.closeModal}>x</button>
+              <button className="close-modal" onClick={() => this.closeModal()}>x</button>
               <div className="product-details">
                 <img src={this.state.product.image} alt={this.state.product.title}></img>
                 <div className="product-details-description">
-                  <p>
+                  <div>
                     <strong>{this.state.product.title}</strong>
-                  </p>
-                  <p>
+                  </div>
+                  <div>
                     {this.state.product.description}
-                  </p>
-                  <p>
+                  </div>
+                  <div>
                     Avaiable Sizes
-                    {this.state.product.availableSizes.map(x => {
-                    return <span>{" "}<button className="button">{x}</button></span>
+                    {this.state.product.availableSizes.map((x) => {
+                    return <span key={x}>{" "}<button className="button">{x}</button></span>
                   })}
-                  </p>
-                  <p className="product-price">
+                  </div>
+                  <div className="product-price width-25rem">
                     <div>{formatCurrency(this.state.product.price)}</div>
                     <button className="button primary" onClick={() => {
                       this.props.addToCart(this.state.product);
                       this.closeModal();
                     }}>Add to cart</button>
-                  </p>
+                  </div>
                 </div>
               </div>
             </Zoom>

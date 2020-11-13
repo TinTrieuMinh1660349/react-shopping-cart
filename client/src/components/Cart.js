@@ -100,6 +100,9 @@ class Cart extends Component {
             )}
           </div>
         )}
+        <div className="add-item">
+          <button className="button button-add-item">Add item</button>
+        </div>
       </div>
     );
   }
