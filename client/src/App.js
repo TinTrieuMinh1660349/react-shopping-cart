@@ -39,7 +39,7 @@ class App extends React.Component {
     })
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }
-
+  
   filterProducts = (event) => {
     if (event.target.value === '') {
       this.setState({
@@ -97,7 +97,7 @@ class App extends React.Component {
                 addToCart={this.addToCart}></Product>
             </div>
             <div className="sidebar">
-              <Cart
+              <Cart 
                 cartItems={this.state.cartItems}
                 removeFromCart={this.removeFromCart}
                 createOrder={this.createOrder}
